@@ -1,67 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {useEffect, useState} from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import 'react-native-gesture-handler';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { View, Text } from 'react-native';
+import PostsScreen from './components/PostsScreen'; // Import your PostsScreen
+
+const Tab = createBottomTabNavigator();
+
+const HomeScreen = () => (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Home Screen</Text>
+    </View>
+);
 
 const App = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch('https://8877-41-80-116-93.ngrok-free.app/wordpress/wp-json/wp/v2/posts');
-        const data = await response.json();
-        setPosts(data);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-      }
-    };
-
-    fetchPosts();
-  }, []);
-
-  const renderItem = ({ item }) => (
-      <View style={styles.postContainer}>
-        <Text style={styles.postTitle}>{item.title.rendered}</Text>
-        <Text style={styles.postDate}>Modified: {item.modified}</Text>
-      </View>
-  );
-
-  return (
-      <View style={styles.container}>
-        <FlatList
-            data={posts}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={renderItem}
-        />
-      </View>
-  );
+    return (
+        <NavigationContainer>
+            <Tab.Navigator>
+                <Tab.Screen name="Home" component={HomeScreen} />
+                <Tab.Screen name="Posts" component={PostsScreen} />
+            </Tab.Navigator>
+        </NavigationContainer>
+    );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#fff',
-  },
-  postContainer: {
-    marginBottom: 20,
-    padding: 20,
-    backgroundColor: '#f9f9f9',
-    borderRadius: 5,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    shadowOffset: { width: 0, height: 2 },
-  },
-  postTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  postDate: {
-    marginTop: 10,
-    fontSize: 14,
-    color: '#666',
-  },
-});
 
 export default App;
