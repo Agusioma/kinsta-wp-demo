@@ -4,10 +4,25 @@ import DataListScreen from "./utils/DataListScreen";
 import {Text, TouchableOpacity} from "react-native";
 import styles from "../styles/listingstyling";
 import {useNavigation} from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const PostsScreen = () => {
-    const { data, loading, refreshing, onRefresh } = fetchData('https://8877-41-80-116-93.ngrok-free.app/wordpress/wp-json/wp/v2/posts');
+    const cacheReadChooserString = "posts"
+    const { data, loading, refreshing, onRefresh } = fetchData('https://887-41-80-116-93.ngrok-free.app/wordpress/wp-json/wp/v2/posts', cacheReadChooserString);
     const navigation = useNavigation();
+
+    //caching the posts
+
+    const cachePosts = async () => {
+        try {
+            await AsyncStorage.setItem(`posts_cache`, JSON.stringify(data));
+        } catch (error) {
+            console.error('Error storing in the cache:', error);
+        }
+    };
+
+    cachePosts()
+
     const renderItem = ({ item }) => {
         return (
             <TouchableOpacity
