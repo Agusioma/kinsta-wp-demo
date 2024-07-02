@@ -1,11 +1,11 @@
-import {StatusBar} from 'expo-status-bar';
-import React, {useCallback, useEffect, useState} from 'react';
-import {View, Text, FlatList, StyleSheet, RefreshControl, ActivityIndicator} from 'react-native';
-import styles from '../styles/listingstyling';
-import fetchData from "./utils/fetchData";
+// screens/PagesScreen.js
+import React from 'react';
+import { View, Text, FlatList, RefreshControl, ActivityIndicator } from 'react-native';
+import styles from '../styles/listingstyling'; // Adjust styling if necessary
+import fetchData from './utils/fetchData';
 
-const PostsScreen = () => {
-    const { data, loading, refreshing, onRefresh } = fetchData('https://8877-41-80-116-93.ngrok-free.app/wordpress/wp-json/wp/v2/posts'); // Replace with your endpoint URL
+const PagesScreen = () => {
+    const { data, loading, refreshing, onRefresh } = fetchData('https://8877-41-80-116-93.ngrok-free.app/wordpress/wp-json/wp/v2/pages'); // Replace with your endpoint URL
 
     const renderItem = ({ item }) => (
         <View style={styles.postContainer}>
@@ -32,4 +32,4 @@ const PostsScreen = () => {
     );
 };
 
-export default PostsScreen;
+export default PagesScreen;

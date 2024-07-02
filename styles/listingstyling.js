@@ -6,12 +6,7 @@ export default StyleSheet.create({
         padding: 20,
         backgroundColor: '#fff',
     },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
-        color: '#b30e0d'
-    },
+
     postContainer: {
         marginBottom: 20,
         padding: 20,
