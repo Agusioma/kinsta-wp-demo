@@ -6,6 +6,8 @@ import RenderHTML from "react-native-render-html";
 import styles from "../styles/detailstylings";
 import useFetchPostDetails from "./utils/useFetchPostDetails";
 import { LogBox } from 'react-native';
+import PostDetailsContent from "./utils/PostDetailsContent";
+import LoadingIndicator from "./utils/LoadingIndicator";
 
 const PostDetailsScreen = () => {
 
@@ -25,19 +27,10 @@ const PostDetailsScreen = () => {
     }
 
     return (
-        <ScrollView
-            style={styles.container}
-            refreshControl={
-                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-            }
-        >
-            <Text style={styles.title}>{post.title.rendered}</Text>
-            <Text style={styles.date}>Published: {new Date(post.date).toLocaleString()}</Text>
-            <Text style={styles.date}>Last Modified: {new Date(post.modified).toLocaleString()}</Text>
-            <Text style={styles.slug}>Slug: {post.slug}</Text>
-            <Text style={styles.status}>Status: {post.status}</Text>
-            <RenderHTML source={{ html: post.content.rendered }} contentWidth={width} />
-        </ScrollView>
+        <View style={styles.container}>
+            <LoadingIndicator loading={loading} />
+            {!loading && <PostDetailsContent post={post} refreshing={loading} onRefresh={onRefresh} width={width} />}
+        </View>
     );
 };
 
