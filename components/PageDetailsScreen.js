@@ -9,12 +9,12 @@ import { LogBox } from 'react-native';
 import PostDetailsContent from "./utils/PostDetailsContent";
 import LoadingIndicator from "./utils/LoadingIndicator";
 
-const PostDetailsScreen = () => {
+const PageDetailsScreen = () => {
 
     //LogBox.ignoreLogs(['Warning: ...']);
     const route = useRoute();
     const { postId } = route.params;
-    const baseUrl = "https://8877-41-80-116-93.ngrok-free.app/wordpress/wp-json/wp/v2/pages"
+    const baseUrl = "https://8877-41-80-116-93.ngrok-free.app/wordpress/wp-json/wp/v2/posts"
     const { post, loading, refreshing, onRefresh } = useFetchPostDetails(baseUrl, postId);
     const {width} = useWindowDimensions();
 
@@ -34,4 +34,4 @@ const PostDetailsScreen = () => {
     );
 };
 
-export default PostDetailsScreen;
+export default PageDetailsScreen;

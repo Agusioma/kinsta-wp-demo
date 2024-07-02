@@ -6,7 +6,8 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import PostsScreen from './components/PostsScreen';
 import PagesScreen from "./components/PagesScreen";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import PostDetailsScreen from "./components/PostDetailsScreen"; // Import your PostsScreen
+import PostDetailsScreen from "./components/PostDetailsScreen";
+import PageDetailsScreen from "./components/PageDetailsScreen"; // Import your PostsScreen
 
 
 const Tab = createBottomTabNavigator();
@@ -52,6 +53,11 @@ const App = () => {
                     name="PostDetails"
                     component={PostDetailsScreen}
                     options={{ title: 'Post Details' }} // Example of setting a header title
+                />
+                <Stack.Screen
+                    name="PageDetails"
+                    component={PageDetailsScreen}
+                    options={{ title: 'Page Details' }} // Example of setting a header title
                 />
             </Stack.Navigator>
         </NavigationContainer>

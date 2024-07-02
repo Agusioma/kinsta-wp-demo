@@ -22,7 +22,9 @@ const useFetchPostDetails = (baseUrl, postId) => {
     }, [postId]);
 
     useEffect(() => {
-        fetchPostDetails();
+
+        const interval = setInterval(fetchPostDetails, 5000); // Fetch data every 5 seconds
+        return () => clearInterval(interval);
     }, [fetchPostDetails]);
 
     const onRefresh = useCallback(() => {
