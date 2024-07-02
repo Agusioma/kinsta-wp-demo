@@ -8,9 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/PagesScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PagesScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/PostsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PostsScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/utils/fetchData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +62,7 @@
       <workItem from="1719906911786" duration="2081000" />
       <workItem from="1719914614762" duration="296000" />
       <workItem from="1719915180151" duration="5130000" />
-      <workItem from="1719921505423" duration="21497000" />
+      <workItem from="1719921505423" duration="21653000" />
     </task>
     <servers />
   </component>
