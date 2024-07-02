@@ -6,7 +6,11 @@ export default StyleSheet.create({
         padding: 20,
         backgroundColor: '#fff',
     },
-
+    loadingContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     postContainer: {
         marginBottom: 20,
         padding: 20,

@@ -8,8 +8,10 @@ import PagesScreen from "./components/PagesScreen";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import PostDetailsScreen from "./components/PostDetailsScreen"; // Import your PostsScreen
 
+
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator()
+
 
 const MainTabNavigator = () => (
     <Tab.Navigator

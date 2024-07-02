@@ -7,7 +7,9 @@ const DataListScreen = ({loading, data, refreshing, onRefresh, renderItem}) => {
     return (
         <View style={styles.container}>
             {loading ? (
-                <ActivityIndicator size="large" color="#0000ff"/>
+                <View style={styles.loadingContainer}>
+                    <ActivityIndicator size="large" color="#0000ff"/>
+                </View>
             ) : (
                 <FlatList
                     data={data}
