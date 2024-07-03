@@ -19,13 +19,11 @@ const MainTabNavigator = () => (
         screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
                 let iconName;
-
                 if (route.name === 'Pages') {
                     iconName = 'list-alt';
                 } else if (route.name === 'Posts') {
                     iconName = 'tasks';
                 }
-
                 return <FontAwesome name={iconName} size={size} color={color} />;
             },
             tabBarActiveTintColor: "#b30e0d",
@@ -47,17 +45,17 @@ const App = () => {
                 <Stack.Screen
                     name="Main"
                     component={MainTabNavigator}
-                    options={{ headerShown: false }} // Hide header for the main tab navigator
+                    options={{ headerShown: false }}
                 />
                 <Stack.Screen
                     name="PostDetails"
                     component={PostDetailsScreen}
-                    options={{ title: 'Post Details' }} // Example of setting a header title
+                    options={{ title: 'Post Details' }}
                 />
                 <Stack.Screen
                     name="PageDetails"
                     component={PageDetailsScreen}
-                    options={{ title: 'Page Details' }} // Example of setting a header title
+                    options={{ title: 'Page Details' }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

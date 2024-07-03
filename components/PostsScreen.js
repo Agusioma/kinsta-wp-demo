@@ -12,7 +12,6 @@ const PostsScreen = () => {
     const navigation = useNavigation();
 
     //caching the posts
-
     const cachePosts = async () => {
         try {
             await AsyncStorage.setItem(`posts_cache`, JSON.stringify(data));
