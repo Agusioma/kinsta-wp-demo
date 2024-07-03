@@ -8,7 +8,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const PagesScreen = () => {
     const cacheReadChooserString = "pages"
-    const { data, loading, refreshing, onRefresh } = fetchData('https://8877-41-80-116-93.ngrok-free.app/wordpress/wp-json/wp/v2/pages', cacheReadChooserString); // Replace with your endpoint URL
+    const { data, loading, refreshing, onRefresh } = fetchData('http://localhost:3000/wordpress/wp-json/wp/v2/pages', cacheReadChooserString); // Replace with your endpoint URL
     const navigation = useNavigation();
 
     const cachePages = async () => {

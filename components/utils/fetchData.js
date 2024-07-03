@@ -1,18 +1,32 @@
 import {useState, useCallback, useEffect} from 'react';
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import NetInfo from "@react-native-community/netinfo";
 
 const fetchData = (url, cacheReadChooserString) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [refreshing, setRefreshing] = useState(false);
+    const [connectionStatus, setConnectionStatus] = useState(true)
+
+    /* NetInfo.addEventListener(state => {
+         console.log('Is connected?', state.isConnected);
+         setConnectionStatus(state.isConnected)
+     });*/
 
     const fetchData = useCallback(async () => {
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            setData(data);
-            setLoading(false);
-        } catch (error) {
+
+        if (connectionStatus === true) {
+            console.log("are we fucking here?")
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                setData(data);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching data:', error)
+                setLoading(false);
+            }
+        } else {
             switch (cacheReadChooserString) {
                 case "posts":
                     loadCache("posts_cache");
@@ -25,6 +39,7 @@ const fetchData = (url, cacheReadChooserString) => {
             }
             setLoading(false);
         }
+
     }, []);
 
     const loadCache = async (cacheKey) => {
@@ -42,6 +57,10 @@ const fetchData = (url, cacheReadChooserString) => {
     };
 
     useEffect(() => {
+        NetInfo.addEventListener(state => {
+            console.log('Is connected?', state.isConnected);
+            setConnectionStatus(state.isConnected)
+        });
         const interval = setInterval(fetchData, 5000); // Fetch data every 5 seconds
         return () => clearInterval(interval);
     }, [fetchData]);

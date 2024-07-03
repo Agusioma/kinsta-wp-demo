@@ -8,7 +8,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const PostsScreen = () => {
     const cacheReadChooserString = "posts"
-    const { data, loading, refreshing, onRefresh } = fetchData('https://8877-41-80-116-93.ngrok-free.app/wordpress/wp-json/wp/v2/posts', cacheReadChooserString);
+    const { data, loading, refreshing, onRefresh } = fetchData('http://localhost:3000/wordpress/wp-json/wp/v2/posts', cacheReadChooserString);
     const navigation = useNavigation();
 
     //caching the posts
