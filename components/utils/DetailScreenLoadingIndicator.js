@@ -1,9 +1,8 @@
-// LoadingIndicator.js
 import React from 'react';
-import { View, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import styles from '../../styles/detailstylings';
 
-const LoadingIndicator = ({ loading }) => {
+const DetailScreenLoadingIndicator = ({ loading }) => {
     if (!loading) return null;
 
     return (
@@ -13,4 +12,4 @@ const LoadingIndicator = ({ loading }) => {
     );
 };
 
-export default LoadingIndicator;
+export default DetailScreenLoadingIndicator;

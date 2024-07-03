@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, FlatList, RefreshControl, ActivityIndicator, TouchableOpacity} from 'react-native';
+import {View, FlatList, RefreshControl, ActivityIndicator } from 'react-native';
 import styles from "../../styles/listingstyling";
 
 const DataListScreen = ({loading, data, refreshing, onRefresh, renderItem}) => {

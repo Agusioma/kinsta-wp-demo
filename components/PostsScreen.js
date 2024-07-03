@@ -26,11 +26,11 @@ const PostsScreen = () => {
     const renderItem = ({ item }) => {
         return (
             <TouchableOpacity
-                style={styles.postContainer}
+                style={styles.listItemContainer}
                 onPress={() => navigation.navigate('PageDetails', { postId: item.id })}
             >
-                <Text style={styles.postTitle}>{item.title.rendered}</Text>
-                <Text style={styles.postDate}>Last modified: {item.modified} UTC</Text>
+                <Text style={styles.listItemTitle}>{item.title.rendered}</Text>
+                <Text style={styles.listItemDate}>Last modified: {item.modified} UTC</Text>
             </TouchableOpacity>
         );
     };

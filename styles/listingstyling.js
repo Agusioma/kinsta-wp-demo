@@ -11,7 +11,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    postContainer: {
+    listItemContainer: {
         marginBottom: 20,
         padding: 20,
         backgroundColor: '#f9f9f9',
@@ -21,12 +21,12 @@ export default StyleSheet.create({
         shadowRadius: 5,
         shadowOffset: { width: 0, height: 2 },
     },
-    postTitle: {
+    listItemTitle: {
         fontSize: 18,
         fontWeight: 'bold',
         color: '#5c1a1b'
     },
-    postDate: {
+    listItemDate: {
         marginTop: 10,
         fontSize: 14,
         color: '#666',

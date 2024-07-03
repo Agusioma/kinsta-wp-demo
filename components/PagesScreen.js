@@ -1,7 +1,6 @@
-// screens/PagesScreen.js
 import React from 'react';
-import {View, Text, FlatList, RefreshControl, ActivityIndicator, TouchableOpacity} from 'react-native';
-import styles from '../styles/listingstyling'; // Adjust styling if necessary
+import { Text, TouchableOpacity} from 'react-native';
+import styles from '../styles/listingstyling';
 import fetchData from './utils/fetchData';
 import DataListScreen from "./utils/DataListScreen";
 import {useNavigation} from "@react-navigation/native";
@@ -25,11 +24,11 @@ const PagesScreen = () => {
     const renderItem = ({ item }) => {
         return (
             <TouchableOpacity
-                style={styles.postContainer}
+                style={styles.listItemContainer}
                 onPress={() => navigation.navigate('PostDetails', { postId: item.id })}
             >
-                <Text style={styles.postTitle}>{item.title.rendered}</Text>
-                <Text style={styles.postDate}>Last modified: {item.modified} UTC</Text>
+                <Text style={styles.listItemTitle}>{item.title.rendered}</Text>
+                <Text style={styles.listItemDate}>Last modified: {item.modified} UTC</Text>
             </TouchableOpacity>
         );
     };

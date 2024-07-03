@@ -1,13 +1,11 @@
-// PostDetailsScreen.js
-import React, { useEffect, useState } from 'react';
-import {View, Text, ActivityIndicator, StyleSheet, ScrollView, useWindowDimensions, RefreshControl} from 'react-native';
+import React  from 'react';
+import {View, ActivityIndicator, useWindowDimensions } from 'react-native';
 import { useRoute } from '@react-navigation/native';
-import RenderHTML from "react-native-render-html";
 import styles from "../styles/detailstylings";
 import useFetchPostDetails from "./utils/useFetchPostDetails";
 import { LogBox } from 'react-native';
 import PostDetailsContent from "./utils/PostDetailsContent";
-import LoadingIndicator from "./utils/LoadingIndicator";
+import DetailScreenLoadingIndicator from "./utils/DetailScreenLoadingIndicator";
 
 const PostDetailsScreen = () => {
 
@@ -28,7 +26,7 @@ const PostDetailsScreen = () => {
 
     return (
         <View style={styles.container}>
-            <LoadingIndicator loading={loading} />
+            <DetailScreenLoadingIndicator loading={loading} />
             {!loading && <PostDetailsContent post={post} refreshing={loading} onRefresh={onRefresh} width={width} />}
         </View>
     );

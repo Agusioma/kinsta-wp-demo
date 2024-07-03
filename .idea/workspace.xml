@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="04acf2c8-417c-45bf-952b-30060eaae550" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/PageDetailsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PageDetailsScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/PagesScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PagesScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/PostDetailsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PostDetailsScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/PostsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PostsScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/utils/DataListScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/utils/DataListScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/utils/LoadingIndicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/utils/DetailScreenLoadingIndicator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/utils/fetchData.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/utils/fetchData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/listingstyling.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/listingstyling.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,19 +44,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/incognito/.local/share/JetBrains/Toolbox/apps/WebStorm/ch-0/233.11799.293/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/incognito/.local/share/JetBrains/Toolbox/apps/WebStorm/ch-0/233.11799.293/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,11 +68,23 @@
       <workItem from="1719906911786" duration="2081000" />
       <workItem from="1719914614762" duration="296000" />
       <workItem from="1719915180151" duration="5130000" />
-      <workItem from="1719921505423" duration="21653000" />
+      <workItem from="1719921505423" duration="21757000" />
+      <workItem from="1719989809475" duration="1704000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/utils/fetchData.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
