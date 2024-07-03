@@ -8,8 +8,7 @@ const fetchData = (url, cacheReadChooserString) => {
     const [refreshing, setRefreshing] = useState(false);
     const [connectionStatus, setConnectionStatus] = useState(true)
 
-
-    const fetchData = useCallback(async () => {
+    const fetchDataCallback = useCallback(async () => {
 
         if (connectionStatus === true) {
             try {
@@ -56,15 +55,15 @@ const fetchData = (url, cacheReadChooserString) => {
             setConnectionStatus(state.isConnected)
         });
 
-        const interval = setInterval(fetchData, 5000); // Fetch data every 5 seconds
+        const interval = setInterval(fetchDataCallback, 5000); // Fetch data every 5 seconds
         return () => clearInterval(interval);
-    }, [fetchData]);
+    }, [fetchDataCallback]);
 
     const onRefresh = useCallback(async () => {
         setRefreshing(true);
-        await fetchData();
+        await fetchDataCallback();
         setRefreshing(false);
-    }, [fetchData]);
+    }, [fetchDataCallback]);
 
     return {data, loading, refreshing, onRefresh};
 };

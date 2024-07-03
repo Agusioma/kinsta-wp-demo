@@ -31,7 +31,7 @@ const MainTabNavigator = () => (
             tabBarActiveTintColor: "#b30e0d",
             tabBarInactiveTintColor: "gray",
             tabBarStyle: {
-                display: "flex" // Correct the tabBarStyle syntax
+                display: "flex"
             },
         })}
     >

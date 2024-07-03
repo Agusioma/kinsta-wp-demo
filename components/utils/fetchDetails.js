@@ -1,13 +1,13 @@
-// hooks/useFetchPostDetails.js
+// hooks/fetchDetails.js
 import {useCallback, useEffect, useState} from 'react';
 
-const useFetchPostDetails = (baseUrl, postId) => {
+const fetchDetails = (baseUrl, postId) => {
     const [post, setPost] = useState(null);
     const [loading, setLoading] = useState(true);
     const [refreshing, setRefreshing] = useState(false);
 
 
-    const fetchPostDetails = useCallback(async () => {
+    const fetchDetailsCallback = useCallback(async () => {
         try {
             const response = await fetch(`${baseUrl}/${postId}`);
             const data = await response.json();
@@ -23,16 +23,16 @@ const useFetchPostDetails = (baseUrl, postId) => {
 
     useEffect(() => {
 
-        const interval = setInterval(fetchPostDetails, 5000); // Fetch data every 5 seconds
+        const interval = setInterval(fetchDetailsCallback, 5000); // Fetch data every 5 seconds
         return () => clearInterval(interval);
-    }, [fetchPostDetails]);
+    }, [fetchDetailsCallback]);
 
     const onRefresh = useCallback(() => {
         setRefreshing(true);
-        fetchPostDetails();
-    }, [fetchPostDetails]);
+        fetchDetailsCallback();
+    }, [fetchDetailsCallback]);
 
     return {post, loading, refreshing, onRefresh};
 };
 
-export default useFetchPostDetails;
+export default fetchDetails;

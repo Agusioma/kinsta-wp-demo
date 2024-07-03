@@ -2,9 +2,9 @@ import React  from 'react';
 import {View, ActivityIndicator, useWindowDimensions } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import styles from "../styles/detailstylings";
-import useFetchPostDetails from "./utils/useFetchPostDetails";
+import fetchDetails from "./utils/fetchDetails";
 import { LogBox } from 'react-native';
-import PostDetailsContent from "./utils/PostDetailsContent";
+import DetailsContent from "./utils/DetailsContent";
 import DetailScreenLoadingIndicator from "./utils/DetailScreenLoadingIndicator";
 
 const PostDetailsScreen = () => {
@@ -13,7 +13,7 @@ const PostDetailsScreen = () => {
     const route = useRoute();
     const { postId } = route.params;
     const baseUrl = "https://8877-41-80-116-93.ngrok-free.app/wordpress/wp-json/wp/v2/pages"
-    const { post, loading, refreshing, onRefresh } = useFetchPostDetails(baseUrl, postId);
+    const { post, loading, refreshing, onRefresh } = fetchDetails(baseUrl, postId);
     const {width} = useWindowDimensions();
 
     if (loading) {
@@ -27,7 +27,7 @@ const PostDetailsScreen = () => {
     return (
         <View style={styles.container}>
             <DetailScreenLoadingIndicator loading={loading} />
-            {!loading && <PostDetailsContent post={post} refreshing={loading} onRefresh={onRefresh} width={width} />}
+            {!loading && <DetailsContent post={post} refreshing={loading} onRefresh={onRefresh} width={width} />}
         </View>
     );
 };

@@ -3,7 +3,7 @@ import {ScrollView, Text, RefreshControl} from 'react-native';
 import RenderHTML from 'react-native-render-html';
 import styles from '../../styles/detailstylings';
 
-const PostDetailsContent = ({post, refreshing, onRefresh, width}) => {
+const DetailsContent = ({post, refreshing, onRefresh, width}) => {
     return (
 
         <ScrollView
@@ -20,4 +20,4 @@ const PostDetailsContent = ({post, refreshing, onRefresh, width}) => {
     );
 };
 
-export default PostDetailsContent;
+export default DetailsContent;
