@@ -8,15 +8,10 @@ const fetchData = (url, cacheReadChooserString) => {
     const [refreshing, setRefreshing] = useState(false);
     const [connectionStatus, setConnectionStatus] = useState(true)
 
-    /* NetInfo.addEventListener(state => {
-         console.log('Is connected?', state.isConnected);
-         setConnectionStatus(state.isConnected)
-     });*/
 
     const fetchData = useCallback(async () => {
 
         if (connectionStatus === true) {
-            console.log("are we fucking here?")
             try {
                 const response = await fetch(url);
                 const data = await response.json();
@@ -58,9 +53,9 @@ const fetchData = (url, cacheReadChooserString) => {
 
     useEffect(() => {
         NetInfo.addEventListener(state => {
-            console.log('Is connected?', state.isConnected);
             setConnectionStatus(state.isConnected)
         });
+
         const interval = setInterval(fetchData, 5000); // Fetch data every 5 seconds
         return () => clearInterval(interval);
     }, [fetchData]);
