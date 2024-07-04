@@ -9,7 +9,7 @@ const fetchData = (url, cacheReadChooserString) => {
     const [connectionStatus, setConnectionStatus] = useState(true)
 
     const fetchDataCallback = useCallback(async () => {
-
+        console.log(url)
         if (connectionStatus === true) {
             try {
                 const response = await fetch(url);

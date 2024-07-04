@@ -1,17 +1,19 @@
 // hooks/fetchDetails.js
 import {useCallback, useEffect, useState} from 'react';
 
-const fetchDetails = (baseUrl, postId) => {
-    const [post, setPost] = useState(null);
+const fetchDetails = (baseUrl, dataId) => {
+    const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [refreshing, setRefreshing] = useState(false);
 
 
     const fetchDetailsCallback = useCallback(async () => {
         try {
-            const response = await fetch(`${baseUrl}/${postId}`);
+            const response = await fetch(`${baseUrl}/${dataId}`);
+            console.log(`${baseUrl}/${dataId}`)
             const data = await response.json();
-            setPost(data);
+            console.log(data)
+            setData(data);
             setLoading(false);
             setRefreshing(false);
         } catch (error) {
@@ -19,7 +21,7 @@ const fetchDetails = (baseUrl, postId) => {
             setLoading(false);
             setRefreshing(false);
         }
-    }, [postId]);
+    }, [dataId]);
 
     useEffect(() => {
 
@@ -32,7 +34,7 @@ const fetchDetails = (baseUrl, postId) => {
         fetchDetailsCallback();
     }, [fetchDetailsCallback]);
 
-    return {post, loading, refreshing, onRefresh};
+    return {data: data, loading, refreshing, onRefresh};
 };
 
 export default fetchDetails;
