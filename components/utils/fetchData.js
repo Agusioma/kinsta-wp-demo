@@ -59,11 +59,15 @@ const fetchData = (url, cacheReadChooserString) => {
         return () => clearInterval(interval);
     }, [fetchDataCallback]);
 
-    const onRefresh = useCallback(async () => {
-        setRefreshing(true);
-        await fetchDataCallback();
-        setRefreshing(false);
-    }, [fetchDataCallback]);
+    const onRefresh = useCallback(
+        async () => {
+            setRefreshing(true);
+            await fetchDataCallback();
+            setRefreshing(false);
+        },
+        [fetchDataCallback]
+    );
+
 
     return {data, loading, refreshing, onRefresh};
 };
